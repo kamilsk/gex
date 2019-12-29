@@ -15,3 +15,9 @@ bin/reviewdog:
 
 bin/golangci-lint:
 	curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b ./bin v1.17.1
+
+PATHS = $(shell go list ./... | sed -e "s|$(shell go list -m)/\{0,1\}||g")
+
+.PHONY: format
+format:
+	@goimports -local $(go list -m) -ungroup -w $(PATHS)

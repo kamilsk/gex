@@ -2,6 +2,8 @@ package mod
 
 import (
 	"context"
+	"os"
+	"strings"
 
 	"github.com/pkg/errors"
 
@@ -42,5 +44,15 @@ func (m *managerImpl) Sync(ctx context.Context, verbose bool) error {
 	if verbose {
 		args = append(args, "-v")
 	}
-	return errors.WithStack(m.executor.Exec(ctx, "go", args...))
+	if err := errors.WithStack(m.executor.Exec(ctx, "go", args...)); err != nil {
+		return err
+	}
+	if strings.Contains(os.Getenv("GOFLAGS"), "-mod=vendor") {
+		args := []string{"mod", "vendor"}
+		if verbose {
+			args = append(args, "-v")
+		}
+		return errors.WithStack(m.executor.Exec(ctx, "go", args...))
+	}
+	return nil
 }
