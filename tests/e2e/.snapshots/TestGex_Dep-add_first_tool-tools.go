@@ -9,3 +9,4 @@ import (
 )
 
 //go:generate go build -v -o=${ROOT}bin/protoc-gen-grpc-gateway ./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+

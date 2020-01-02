@@ -21,3 +21,4 @@ import (
 //go:generate go build -v -o=${ROOT}bin/protoc-gen-swagger ./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 //go:generate go build -v -o=${ROOT}bin/gex ./vendor/github.com/izumin5210/gex/cmd/gex
 //go:generate go build -v -o=${ROOT}bin/golint ./vendor/golang.org/x/lint/golint
+

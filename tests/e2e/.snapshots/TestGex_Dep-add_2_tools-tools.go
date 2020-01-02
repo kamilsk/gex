@@ -13,3 +13,4 @@ import (
 //go:generate go build -v -o=${ROOT}bin/mockgen ./vendor/github.com/golang/mock/mockgen
 //go:generate go build -v -o=${ROOT}bin/protoc-gen-grpc-gateway ./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 //go:generate go build -v -o=${ROOT}bin/golint ./vendor/golang.org/x/lint/golint
+
