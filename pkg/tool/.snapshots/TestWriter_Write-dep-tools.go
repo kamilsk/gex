@@ -17,3 +17,4 @@ import (
 //go:generate go build -v -o=${ROOT}bin/protoc-gen-swagger ./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 //go:generate go build -v -o=${ROOT}bin/sqlboiler ./vendor/github.com/volatiletech/sqlboiler
 //go:generate go build -v -o=${ROOT}bin/sqlboiler-psql ./vendor/github.com/volatiletech/sqlboiler/drivers/sqlboiler-psql
+
